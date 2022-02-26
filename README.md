@@ -1,2 +1,2 @@
 # ihatemoney-pi
-ihatemoney (expense sharing) hosted on a Raspberry Pi with docker
+[ihatemoney](ihatemoney.org) (expense sharing) hosted on a Raspberry Pi with docker.
