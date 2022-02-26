@@ -13,6 +13,7 @@ services:
       - /mnt/mydatastorage/ihatemoney-storage:/var/lib/ihatemoney
     ports:
       - 80:80
+    restart: unless-stopped
   ihatemoney_edits:
     build: ./edits
     environment:
@@ -21,3 +22,4 @@ services:
       - ./storage:/var/lib/ihatemoney
     ports:
       - 8081:80
+    restart: unless-stopped
