@@ -1,0 +1,23 @@
+version: '2.1'
+
+services:
+  ihatemoney:
+    build: .
+    environment:
+      - SQLITE_DATABASE=/var/lib/ihatemoney/ihatemoney.sqlite
+      - ACTIVATE_DEMO_PROJECT=False
+      - ADMIN_PASSWORD=pbkdf2:sha256:150000$$2cYwU1JE$$7a331339ea250c1bb85abd2bd82d1d75ab4dff8409bf0248af81b58660bcf95a
+      - ALLOW_PUBLIC_PROJECT_CREATION=True
+      - ACTIVATE_ADMIN_DASHBOARD=True
+    volumes:
+      - /mnt/mydatastorage/ihatemoney-storage:/var/lib/ihatemoney
+    ports:
+      - 80:80
+  ihatemoney_edits:
+    build: ./edits
+    environment:
+      - SQLITE_DATABASE=/var/lib/ihatemoney/ihatemoney.sqlite
+    volumes:
+      - ./storage:/var/lib/ihatemoney
+    ports:
+      - 8081:80
