@@ -27,4 +27,4 @@ ihatemoney --help
 sqlite3 $SQLITE_DATABASE < /bin/trigger_bill_update.sql
 
 # start dev server (for now; gunicorn would be better)
-ihatemoney runserver --host 0.0.0.0 --port 80
+ihatemoney run --host 0.0.0.0 --port 80
