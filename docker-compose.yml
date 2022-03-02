@@ -9,6 +9,7 @@ services:
       - ADMIN_PASSWORD=pbkdf2:sha256:260000$$DxG96nzhVO2znqMo$$89b6f4b287f4557bca0993a83d24375888d2ad805d57f53687122fa83feaa9b9
       - ALLOW_PUBLIC_PROJECT_CREATION=True
       - ACTIVATE_ADMIN_DASHBOARD=True
+      - SESSION_COOKIE_SECURE=False # otherwise, hosting without tls will not work
     volumes:
       - /mnt/mydatastorage/ihatemoney-storage:/var/lib/ihatemoney
     ports:
